@@ -1,3 +1,8 @@
+// Create a new Audio object
+const audio = new Audio('audio.mp3'); // Replace with the path to your audio file
+// Set the audio to loop
+audio.loop = true;
+
 window.onload = function () {
     const imageItems = document.querySelectorAll('.image-item');
     let currentIndex = 0;
@@ -26,3 +31,14 @@ window.onload = function () {
     // Start the cycle
     highlightImageItem();
 };
+
+// Function to play the audio
+function playAudioLoop() {
+    audio.play();
+}
+
+function enterWebsite() {
+    document.getElementById('entryModal').style.display = 'none'; // Hide the modal
+    document.getElementById('mainContent').style.display = 'block'; // Show the main content
+    playAudioLoop();
+}

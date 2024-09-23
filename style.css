@@ -4,6 +4,56 @@
     font-weight: normal;
     font-style: normal;
 }
+/* Style the modal (background overlay) */
+#entryModal {
+    font-family: 'CustomFont', Arial, sans-serif;
+    position: fixed;
+    z-index: 999;
+    /* Overlay everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the modal content */
+.modal-content {
+    font-family: 'CustomFont', Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Button style */
+.enter-button {
+    font-family: 'CustomFont', Arial, sans-serif;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.enter-button:hover {
+    background-color: #8a6600;
+}
+
+/* Hide main content initially */
+#mainContent {
+    display: none;
+}
+
+
 
 
 .paw {
@@ -320,7 +370,7 @@ section .money2 {
     }
 }
 
-.socials_mobile{
+.socials_mobile {
     display: none;
 }
 
@@ -332,12 +382,16 @@ section .money2 {
         font-family: 'CustomFont', Arial, sans-serif;
         text-align: center;
     }
-    .paw, .paw2{
+
+    .paw,
+    .paw2 {
         display: none;
     }
-    .socials{
+
+    .socials {
         display: none;
     }
+
     section p {
         color: white;
         font-family: 'CustomFont', Arial, sans-serif;
@@ -347,12 +401,13 @@ section .money2 {
         width: 75%;
     }
 
-    .socials_mobile{
+    .socials_mobile {
         display: block;
     }
+
     .wiki {
         width: 80px;
         margin-left: 10px;
     }
-    
+
 }
