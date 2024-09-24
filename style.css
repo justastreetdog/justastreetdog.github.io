@@ -222,6 +222,30 @@ footer p {
     }
 }
 
+
+.hover_link{
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.hover_link:hover{
+    transform: translateY(-15px);
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate_hover:hover{
+    animation: rotate 3s linear infinite;
+}
+
 .tokenomics-card {
     background-color: #0000006b;
     border-radius: 10px;
