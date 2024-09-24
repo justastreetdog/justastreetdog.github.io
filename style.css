@@ -54,6 +54,13 @@
 }
 
 
+.tokenomics-card .pawtokenomics{
+    display: block;
+    top: 3%;
+    right: 3%;
+    position: absolute;
+    width: 75px;
+}
 
 
 .paw {
@@ -215,6 +222,8 @@ footer p {
     text-align: left;
     border-color: rgba(255, 255, 255, 0.801);
     border-style: solid;
+    filter: brightness(100%);
+    transform: translateY(0px);
 }
 
 .tokenomics-card:hover {
