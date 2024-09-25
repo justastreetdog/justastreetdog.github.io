@@ -5,6 +5,46 @@
     font-style: normal;
 }
 
+
+/* Container to hold the sliding text */
+.slide-container {
+    position: relative;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+
+/* Text to slide in a cyclic manner */
+.slide-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 15s linear infinite;
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+/* Keyframes to move text in a loop */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Duplicating the text for seamless effect */
+.slide-container .inner {
+    display: flex;
+}
+
 /* Style the modal (background overlay) */
 #entryModal {
     font-family: 'CustomFont', Arial, sans-serif;
@@ -61,6 +101,45 @@
     right: 3%;
     position: absolute;
     width: 75px;
+    animation: rotate 10s linear infinite;
+    /* Continuous rotation */
+
+}
+
+.tokenomics-card .pawtokenomics2 {
+    display: block;
+    top: 3%;
+    right: 3%;
+    position: absolute;
+    width: 75px;
+    animation: rotate2 10s linear infinite;
+    /* Continuous rotation */
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        /* Start at 0 degrees */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Rotate to 360 degrees */
+    }
+}
+
+
+@keyframes rotate2 {
+    from {
+        transform: rotate(0deg);
+        /* Start at 0 degrees */
+    }
+
+    to {
+        transform: rotate(-360deg);
+        /* Rotate to 360 degrees */
+    }
 }
 
 .tokenomic_img {
@@ -143,13 +222,26 @@
 
 body {
     font-family: 'CustomFont', Arial, sans-serif;
-    background-image: url("street.jpg");
+    background-image: url("ezgif-6-2384facde7.gif");
+    background-size: contain;
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 18%;
+    margin-right: auto;
+}
+
+.exp {
+    margin-top: -5%;
+    margin-left: -22%;
+}
+
+.exp h2 {
+    margin-left: -42.5%;
+    margin-bottom: -1%;
 }
 
 @keyframes slide-up {
@@ -168,13 +260,59 @@ header {
     }
 }
 
+.copycontract {
+    font-family: 'CustomFont', Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border-style: solid;
+    width: fit-content;
+    border-radius: 12px;
+    margin-top: 1%;
+    padding: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: rgba(0, 0, 0, 0.439);
+    border-style: double;
+    border-color: white;
 
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2b6f4", endColorstr="#ffffff", GradientType=1);
+
+}
+
+.copybutton {
+    font-family: 'CustomFont', Arial, sans-serif;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    color: rgb(83, 135, 255);
+    background-color: #000000;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 8px;
+}
+
+.address {
+    font-size: 20px;
+}
+
+.copybutton:hover {
+    border-color: black;
+    color: black;
+    background-color: white;
+}
 
 h1 {
     color: white;
     font-size: 75px;
     font-family: 'CustomFont', Arial, sans-serif;
     text-align: center;
+    /* text-decoration: underline;
+    text-decoration-color: #ddff00; */
 
     /* Start as invisible */
 }
@@ -187,8 +325,9 @@ header .main_logo {
     border-radius: 250px;
     border-style: double;
     border-width: 5px;
-    border-color: rgb(0, 0, 0);
+    /* border-color: rgb(255, 255, 255); */
     background-color: rgba(0, 0, 0, 0.462);
+    /* animation: rainbow 1s linear infinite; */
     transition: transform 0.3s ease-in-out;
     /* Smooth transition effect */
 }
@@ -196,6 +335,14 @@ header .main_logo {
 header .main_logo:hover {
     transform: rotate(10deg);
     /* Rotate image by 10 degrees on hover */
+}
+
+header p {
+    background-color: #00000073;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
 }
 
 section p {
@@ -211,7 +358,7 @@ section p {
 section h2 {
     color: white;
     font-family: 'CustomFont', Arial, sans-serif;
-    font-size: 42px;
+    font-size: 55px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -226,6 +373,7 @@ section .socials {
     background-color: rgba(255, 255, 255, 0);
     text-decoration: none;
     text-emphasis: none;
+    margin-top: -3%;
 
 }
 
@@ -246,14 +394,96 @@ footer p {
     background-color: #f8f9fa00;
     text-align: center;
     font-family: 'Arial', sans-serif;
+    background-image: url("ezgif-6-7fc760e7ee.gif");
+    background-size: contain;
 }
 
 #tokenomics h2 {
-    font-size: 42px;
+    font-size: 55px;
     font-weight: 600;
     margin-bottom: 40px;
     color: #ffffff;
     letter-spacing: 1px;
+}
+
+@keyframes rainbow {
+    0% {
+        border-color: red;
+    }
+
+    14% {
+        border-color: orange;
+    }
+
+    28% {
+        border-color: yellow;
+    }
+
+    42% {
+        border-color: green;
+    }
+
+    57% {
+        border-color: blue;
+    }
+
+    71% {
+        border-color: indigo;
+    }
+
+    85% {
+        border-color: violet;
+    }
+
+    100% {
+        border-color: red;
+    }
+
+    /* Loop back to red */
+}
+
+@keyframes rainbowtext {
+    0% {
+        color: red;
+    }
+
+    14% {
+        color: orange;
+    }
+
+    28% {
+        color: yellow;
+    }
+
+    42% {
+        color: green;
+    }
+
+    57% {
+        color: blue;
+    }
+
+    71% {
+        color: indigo;
+    }
+
+    85% {
+        color: violet;
+    }
+
+    100% {
+        color: red;
+    }
+
+    /* Loop back to red */
+}
+.expmobile{
+    display: none;
+}
+.rainbow {
+    animation: rainbowtext 2s linear infinite;
+    /* Animation with duration and timing */
+
 }
 
 .tokenomics-cards {
@@ -263,6 +493,15 @@ footer p {
     max-width: 1500px;
     margin: 0 auto;
     font-family: 'CustomFont', Arial, sans-serif;
+    background-color: #1b1b1ba0;
+    border-radius: 30px;
+    padding: 15px;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    animation: rainbow 1s linear infinite;
+    /* Animation with duration and timing */
+
 }
 
 @keyframes hover {
@@ -293,15 +532,6 @@ footer p {
     transition: transform 0.2s ease-in-out;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 .rotate_hover:hover {
     animation: rotate 3s linear infinite;
@@ -313,7 +543,7 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin: 15px;
-    width: 500px;
+    width: 250px;
     text-align: left;
     border-color: rgba(255, 255, 255, 0.801);
     border-style: solid;
@@ -327,16 +557,17 @@ footer p {
 }
 
 .tokenomics-card h3 {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 700;
     color: #ffdf86;
     margin-bottom: 15px;
 }
 
 .tokenomics-card p {
-    font-size: 16px;
+    font-size: 25px;
     line-height: 1.6;
     color: #ffffff;
+    width: 100%;
 }
 
 .tokenomics-card ul {
@@ -371,6 +602,7 @@ footer p {
     .tokenomics-cards {
         flex-direction: column;
         align-items: center;
+        width: 85%;
     }
 
     .tokenomics-card {
@@ -390,7 +622,7 @@ footer p {
 }
 
 #gallery h2 {
-    font-size: 42px;
+    font-size: 55px;
     margin-bottom: 40px;
     color: #ffffff;
     font-weight: 600;
@@ -425,6 +657,8 @@ footer p {
 .image-item img:hover {
     filter: grayscale(0%);
     transform: translateY(-10px);
+    animation: rainbow 1s linear infinite;
+
 }
 
 .color img {
@@ -480,6 +714,11 @@ section .money2 {
 
 /* Responsive Design for smaller screens */
 @media (max-width:1000px) {
+    body {
+        font-family: 'CustomFont', Arial, sans-serif;
+        background-image: url("ezgif-6-2384facde7.gif");
+        background-size: 250%;
+    }
     h1 {
         color: white;
         font-size: 30px;
@@ -494,6 +733,10 @@ section .money2 {
 
     .socials {
         display: none;
+    }
+
+    section {
+        margin-top: 10%;
     }
 
     section p {
@@ -514,4 +757,77 @@ section .money2 {
         margin-left: 10px;
     }
 
+    .exp {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .copycontract {
+        font-family: 'CustomFont', Arial, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        border-style: solid;
+        width: fit-content;
+        border-radius: 12px;
+        margin-top: 5%;
+        padding: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-color: rgba(0, 0, 0, 0.439);
+        border-style: double;
+        border-color: white;
+
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2b6f4", endColorstr="#ffffff", GradientType=1);
+
+    }
+
+    .copybutton {
+        font-family: 'CustomFont', Arial, sans-serif;
+        margin: 5px;
+        border-radius: 10px;
+        font-weight: bolder;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        color: rgb(83, 135, 255);
+        background-color: #000000;
+        cursor: pointer;
+        font-size: 20px;
+        padding-bottom: 0;
+        padding-top: 5px;
+    }
+    .address {
+        font-size: 13px;
+    }
+    .slide-container {
+        position: relative;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    .tokenomics{
+        margin-top: 0%;
+    }
+    #tokenomics {
+        width: 100%;
+        padding: 60px 0;
+        background-color: #f8f9fa00;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        background-image: url("ezgif-6-7fc760e7ee.gif");
+        background-size: 250%;
+    }
 }
