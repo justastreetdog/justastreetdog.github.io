@@ -55,7 +55,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0);
     /* Black background with opacity */
     display: flex;
     justify-content: center;
@@ -206,6 +206,26 @@
     animation: slide-right 2s ease-out forwards;
 }
 
+
+.pawwelcome {
+    top: 3%;
+    left: 10%;
+    position: absolute;
+    width: 100px;
+    animation: slide-left 2s ease-out forwards;
+    z-index: -1;
+
+}
+
+.pawwelcome2 {
+    z-index: -1;
+    top: 32%;
+    right: 10%;
+    position: absolute;
+    width: 100px;
+    animation: slide-right 2s ease-out forwards;
+}
+
 @keyframes grayscaleani {
     0% {
         filter: brightness(50%);
@@ -305,7 +325,9 @@ header {
     color: black;
     background-color: white;
 }
-
+.mobiletopic{
+    display: none; 
+}
 h1 {
     color: white;
     font-size: 75px;
@@ -382,9 +404,11 @@ section a {
 }
 
 footer p {
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     text-align: center;
+    margin-bottom: 0%;
+    padding: 10px;
 }
 
 /* Container for tokenomics section */
@@ -714,9 +738,15 @@ section .money2 {
 
 /* Responsive Design for smaller screens */
 @media (max-width:1000px) {
+    .desktoptopic{
+        display: none;
+    }
+    header .main_logo {
+        margin-bottom: 6%;
+    }
     body {
         font-family: 'CustomFont', Arial, sans-serif;
-        background-image: url("ezgif-6-2384facde7.gif");
+        background-image: url("street.jpg");
         background-size: 250%;
     }
     h1 {
@@ -726,8 +756,8 @@ section .money2 {
         text-align: center;
     }
 
-    .paw,
-    .paw2 {
+    .welcome,
+    .paw2, .paw{
         display: none;
     }
 
@@ -736,7 +766,7 @@ section .money2 {
     }
 
     section {
-        margin-top: 10%;
+        margin-top: 0%;
     }
 
     section p {
@@ -815,7 +845,7 @@ section .money2 {
         overflow: hidden;
         display: flex;
         align-items: center;
-        margin-top: 0%;
+        margin-top: 2%;
         margin-bottom: 0%;
     }
     .tokenomics{
@@ -827,7 +857,32 @@ section .money2 {
         background-color: #f8f9fa00;
         text-align: center;
         font-family: 'Arial', sans-serif;
-        background-image: url("ezgif-6-7fc760e7ee.gif");
+        background-image: url("street2.jpeg");
         background-size: 250%;
+    }
+    .mobiletopic{
+        display: block;
+        font-size: 50px;
+    }
+    section h2 {
+        color: white;
+        font-family: 'CustomFont', Arial, sans-serif;
+        font-size: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    #gallery h2 {
+        font-size: 40px;
+        margin-bottom: 40px;
+        color: #ffffff;
+        font-weight: 600;
+    }
+    #tokenomics h2 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        color: #ffffff;
+        letter-spacing: 1px;
     }
 }
