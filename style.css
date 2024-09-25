@@ -4,6 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* Style the modal (background overlay) */
 #entryModal {
     font-family: 'CustomFont', Arial, sans-serif;
@@ -54,7 +55,7 @@
 }
 
 
-.tokenomics-card .pawtokenomics{
+.tokenomics-card .pawtokenomics {
     display: block;
     top: 3%;
     right: 3%;
@@ -62,23 +63,60 @@
     width: 75px;
 }
 
-.tokenomic_img{
+.tokenomic_img {
     display: block;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
     border-radius: 100px;
-    border-style: double;
-    border-color: #007bff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffffff;
     bottom: 0;
 }
+
+/* Keyframe for sliding from the left */
+@keyframes slide-left {
+    0% {
+        transform: translateX(-150px);
+        /* Starting offscreen */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Moves into position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+/* Keyframe for sliding from the right */
+@keyframes slide-right {
+    0% {
+        transform: translateX(150px);
+        /* Starting offscreen */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    100% {
+        transform: translateX(0px);
+        /* Moves into position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
 .paw {
     top: 3%;
     left: 10%;
     position: absolute;
     width: 100px;
-    animation: grayscaleani 8s linear infinite;
+    animation: slide-left 2s ease-out forwards;
+
 }
 
 .paw2 {
@@ -86,7 +124,7 @@
     right: 10%;
     position: absolute;
     width: 100px;
-    animation: grayscaleani 8s linear infinite;
+    animation: slide-right 2s ease-out forwards;
 }
 
 @keyframes grayscaleani {
@@ -114,11 +152,31 @@ header {
     align-items: center;
 }
 
+@keyframes slide-up {
+    0% {
+        transform: translateY(30px);
+        /* Start 100px below the final position */
+        opacity: 0;
+        /* Invisible */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Final position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+
+
 h1 {
     color: white;
     font-size: 75px;
     font-family: 'CustomFont', Arial, sans-serif;
     text-align: center;
+
+    /* Start as invisible */
 }
 
 header .main_logo {
@@ -147,6 +205,7 @@ section p {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
 }
 
 section h2 {
@@ -167,6 +226,7 @@ section .socials {
     background-color: rgba(255, 255, 255, 0);
     text-decoration: none;
     text-emphasis: none;
+
 }
 
 section a {
@@ -223,12 +283,12 @@ footer p {
 }
 
 
-.hover_link{
+.hover_link {
     transition: transform 0.2s ease-in-out;
 }
 
 
-.hover_link:hover{
+.hover_link:hover {
     transform: translateY(-15px);
     transition: transform 0.2s ease-in-out;
 }
@@ -237,12 +297,13 @@ footer p {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
 
-.rotate_hover:hover{
+.rotate_hover:hover {
     animation: rotate 3s linear infinite;
 }
 
