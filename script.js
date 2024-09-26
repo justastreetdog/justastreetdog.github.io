@@ -45,7 +45,7 @@ function enterWebsite() {
 
 function copyFunction() {
     // Copy the text inside the text field
-    navigator.clipboard.writeText("0x00000000000000000000000000000");
+    navigator.clipboard.writeText("0xc85099424A5004a6c4b28fd1101E9cbEedb4dafe");
 
     // Alert the copied text
     //alertTimeout("Copied Ca", 1000)
